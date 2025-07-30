@@ -10,6 +10,9 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 # Create golang directory if it doesn't exist
 mkdir -p golang
 
+# Ensure we're on the main branch
+git checkout main || git checkout -b main
+
 protoc --go_out=./golang --go_opt=paths=source_relative \
  --go-grpc_out=./golang --go-grpc_opt=paths=source_relative \
  ./${SERVICE_NAME}/*.proto
@@ -25,6 +28,7 @@ else
 fi
 
 git add . && git commit -am "proto update" || true
+git push origin main
 git tag -fa golang/${SERVICE_NAME}/${RELEASE_VERSION} \
  -m "golang/${SERVICE_NAME}/${RELEASE_VERSION}"
 git push origin refs/tags/golang/${SERVICE_NAME}/${RELEASE_VERSION}
