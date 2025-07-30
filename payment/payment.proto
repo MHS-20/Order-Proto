@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package=" GitHub/MHS-20/Order-Microservice/payment";
+
+message CreatePaymentRequest {
+	float price = 1;
+}
+
+message CreatePaymentResponse {
+	int64 bill_id = 1;
+}
+
+service PaymentService {
+    rpc Create(CreatePaymentRequest) returns (CreatePaymentResponse) {}
+}
