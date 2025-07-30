@@ -9,6 +9,9 @@ jobs:
   protoc:
     name: "Generate"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
     strategy:
       matrix:
         service: ["order", "payment", "shipping"]

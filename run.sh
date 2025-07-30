@@ -23,8 +23,6 @@ if [ -d "golang/${SERVICE_NAME}" ]; then
 else
     echo "Warning: golang/${SERVICE_NAME} directory not created. Skipping Go module initialization."
 fi
-git config --global user.email "muhamad.salman2001@gmail.com"
-git config --global user.name "MHS-20"
 
 git add . && git commit -am "proto update" || true
 git tag -fa golang/${SERVICE_NAME}/${RELEASE_VERSION} \
