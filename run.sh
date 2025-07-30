@@ -28,6 +28,7 @@ else
 fi
 
 git add . && git commit -am "proto update" || true
+git pull origin main --rebase || true
 git push origin main
 git tag -fa golang/${SERVICE_NAME}/${RELEASE_VERSION} \
  -m "golang/${SERVICE_NAME}/${RELEASE_VERSION}"
