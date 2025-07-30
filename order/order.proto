@@ -1,5 +1,5 @@
 syntax = “proto3”;
-option go_package=" GitHub/MHS-20/Order-Microservice/order";
+option go_package = "github.com/MHS-20/Order-Proto/order";
 
 message CreateOrderRequest {
  int64 user_id = 1;
