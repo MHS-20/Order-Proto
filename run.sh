@@ -12,7 +12,7 @@ protoc --go_out=./golang --go_opt=paths=source_relative \
  ./${SERVICE_NAME}/*.proto
 
 cd golang/${SERVICE_NAME}
-go mod init github.com/MHS-20/order-proto/golang/${SERVICE_NAME} ||true
+go mod init github.com/MHS-20/Order-Proto/golang/${SERVICE_NAME} ||true
 go mod tidy
 
 cd ../../
